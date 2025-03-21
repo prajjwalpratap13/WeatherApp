@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightseagreen;
+}
+.container {
+  width: 30%;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgb(56, 151, 170), rgb(16, 81, 109));
+  padding: 2vh 3vw;
+  text-align: center;
+}
+.container h1 {
+  background: linear-gradient(135deg, red, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.search-box {
+  margin: 2vh;
+  display: flex;
+  align-items: center;
+}
+.search-box .input {
+  padding: 1vh 1vw;
+  outline: 0;
+  border: 0;
+  border-radius: 50px;
+  width: 100%;
+  margin-right: 1vw;
+  font-size: 2vw;
+  font-weight: 400;
+}
+.search-box .btn {
+  padding: 1vh 1vw;
+  outline: 0;
+  border: 0;
+  border-radius: 50px;
+  width: 3vw;
+  height: 3vw;
+  cursor: pointer;
+}
+.search-box .btn img {
+  width: 100%;
+  
+}
+.error {
+  display: none;
+  font-size: 2vw;
+}
+.none {
+  display: none;
+  transition: all ease-in-out 0.2s;
+}
+.weather-detail img {
+  margin-top: 1vh;
+  width: 10vw;
+}
+.weather-detail h2 {
+  font-size: 3vw;
+  font-weight: 550;
+  margin-bottom: 1vh;
+}
+.extra {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5vh 0;
+}
+.extra .col {
+  display: flex;
+  align-items: center;
+  gap: 0.7vw;
+}
+.extra .col img {
+  width: 3vw;
+}
+.extra .col .details h2 {
+  font-size: 1.3vw;
+  font-weight: bold;
+}
+@media (max-width:600px) {
+  .container {
+    width: 70%;
+  }
+  .search-box .input {
+    padding: 1.5vh 3vw;
+    width: 80%;
+    font-size: 4.5vw;
+  }
+  .search-box .btn {
+    padding: 1vw;
+    width: 9vw;
+    height: 9vw;
+  }
+  .search-box .btn img {
+    width: 60%;
+  }
+  .error {
+    font-size: 6vw;
+  }
+  .weather-detail img {
+    width: 25vw;
+  }
+  .weather-detail h2 {
+    font-size: 7vw;
+    margin-bottom: 0vh;
+  }
+  .extra {
+    justify-content: center;
+    gap: 8vw;
+  }
+  .extra .col {
+    gap: 0.5vw;
+  }
+  .extra .col img {
+    width: 7vw;
+  }
+  .extra .col .details h2 {
+    font-size: 3vw;
+  }
+}
