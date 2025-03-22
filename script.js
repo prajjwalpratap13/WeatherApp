@@ -5,6 +5,7 @@ let speed = document.querySelector(".speed");
 let input = document.querySelector(".input");
 let btn = document.querySelector("button");
 let img = document.querySelector(".weather-img");
+let error = document.querySelector(".error");
 
 let apiKey = "da3c00accb0fcdb4b2f12ee6836848a7";
 let url = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
@@ -14,7 +15,8 @@ async function getData(cityName) {
   let result = await data.json();
 
   if (data.status == 404) {
-    document.querySelector(".error").style.display = "block";
+    error.style.display = "block";
+    error.innerHTML = `<p>Invalid city name.</p>`
     document.querySelector(".none").style.display = "none";
   } else {
     temp.innerHTML = Math.round(result.main.temp) + "°C";
@@ -37,10 +39,16 @@ async function getData(cityName) {
       img.src = "Assets/mist.png";
     }
     document.querySelector(".none").style.display = "block";
-    document.querySelector(".error").style.display = "none";
+    error.style.display = "none";
   }
 }
 
 btn.addEventListener("click", () => {
-  getData(input.value);
+  if(input.value==""){
+    error.innerHTML = `<p>First enter city name.🤦‍♂️</p>`
+    error.style.display = "block";
+  }
+  else{
+    getData(input.value);
+  }
 });
